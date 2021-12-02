@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <Button
+        android:id="@+id/btn_sGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="뒤로가기"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:text="회원가입 화면"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_sGoBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:text="EMAIL"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ed_sEmail"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="PASSWORD"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ed_sPw"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="54dp"
+        android:text="NAME"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ed_sName"
+        app:layout_constraintEnd_toStartOf="@+id/btn_sSignUp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="PNONE_NO"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ed_sPhone"
+        app:layout_constraintEnd_toStartOf="@+id/ed_sPhone" />
+
+    <EditText
+        android:id="@+id/ed_sEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="146dp"
+        android:layout_marginBottom="146dp"
+        android:ems="10"
+        android:hint="이메일 입력"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/ed_sName"
+        app:layout_constraintEnd_toEndOf="@+id/ed_sName"
+        app:layout_constraintStart_toStartOf="@+id/ed_sName"
+        app:layout_constraintTop_toTopOf="@+id/text_signUp" />
+
+    <EditText
+        android:id="@+id/ed_sName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="이름 입력"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ed_sPhone"
+        app:layout_constraintEnd_toEndOf="@+id/ed_sPhone" />
+
+    <EditText
+        android:id="@+id/ed_sPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="291dp"
+        android:ems="10"
+        android:hint="전화번호 입력"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/ed_sPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="비밀번호 입력"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/ed_sEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ed_sEmail" />
+
+    <Button
+        android:id="@+id/btn_sSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="53dp"
+        android:text="회원가입"
+        app:layout_constraintStart_toEndOf="@+id/text_sPhone"
+        app:layout_constraintTop_toBottomOf="@+id/ed_sPhone" />
+</androidx.constraintlayout.widget.ConstraintLayout>
