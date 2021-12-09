@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/map"
-        class="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/googlemap"
+        class="com.google.android.gms.maps.MapFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -54,6 +54,6 @@
         android:layout_marginTop="28dp"
         android:text="SW"
         map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toBottomOf="@+id/map" />
+        map:layout_constraintTop_toBottomOf="@+id/googlemap" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

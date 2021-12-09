@@ -2,6 +2,7 @@ package com.example.sw;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -17,20 +19,22 @@ import com.example.sw.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    private ActivityMapsBinding binding;
+    //private GoogleMap mMap;
+    //private ActivityMapsBinding binding;
     private Button btn_login, btn_search, btn_now;
+    private FragmentManager fragmentManager;
+    private MapFragment mapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        getIntent();
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_test);
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+         fragmentManager=getFragmentManager();
+         mapFragment = (MapFragment) fragmentManager.findFragmentById(R.id.googlemap);
+         mapFragment.getMapAsync(this);
+
+
         btn_login=findViewById(R.id.btn_logIn);
         btn_search=findViewById(R.id.btn_search);
         btn_now=findViewById(R.id.btn_now);
@@ -55,11 +59,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        LatLng location = new LatLng(35.139813, 126.934290);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.title("조선대학교 IT융합대학");
+        markerOptions.snippet("단과대학");
+        markerOptions.position(location);
+        googleMap.addMarker(markerOptions);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
     }
 }
